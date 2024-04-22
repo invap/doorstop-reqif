@@ -10,7 +10,7 @@ fn complete(document: &Document, reqif: &mut ReqIf, specification: &mut Specific
 
     let root_children = &mut specification.children;
 
-    for (_, each_item) in document.items.iter() {
+    for (_, each_item) in document.items_sorted_by_id.iter() {
         //add specs
         reqif.add_requirement(SpecObjectRequirement::new(
             each_item.id.as_ref().unwrap().to_string(),
@@ -29,14 +29,14 @@ fn complete(document: &Document, reqif: &mut ReqIf, specification: &mut Specific
         ));
 
         //Create the hierarchy
-        let spec_hierarchy = SpecHierarchy {
-            identifier: each_item.level.as_ref().unwrap().to_string(),
-            last_change: now.clone(),
-            object: Object {
-                object_ref: each_item.id.as_ref().unwrap().to_string(),
-            },
-        };
-        root_children.spec_hierarchy.push(spec_hierarchy);
+        let spec_hierarchy = SpecHierarchy::new(
+            each_item.get_level().to_string(),
+            now.clone(),
+            Object::new(each_item.id.as_ref().unwrap().to_string()),
+        );
+        root_children
+            .add_spec_hierarchy(spec_hierarchy, each_item.get_depth())
+            .expect(format!("Error adding item {:#?}", each_item).as_str());
     }
 }
 
