@@ -1,4 +1,4 @@
-use capella_reqif::req_if::{Object, ReqIf, SpecHierarchy, SpecObjectRequirement, Specification};
+use reqif_rs::req_if::{Object, ReqIf, SpecHierarchy, SpecObjectRequirement, Specification};
 use chrono::{DateTime, Local, SecondsFormat};
 use clap::Parser;
 use doorstop_rs::doorstop::{document::Document, document_tree::DocumentTree};

@@ -1,3 +1,6 @@
 [submodule "doorstop-rs"]
 	path = doorstop-rs
 	url = git@github.com:invap/doorstop-rs.git
+[submodule "reqif-rs"]
+	path = reqif-rs
+	url = git@github.com:invap/reqif-rs.git

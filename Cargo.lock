@@ -93,16 +93,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "79296716171880943b8470b5f8d03aa55eb2e645a4874bdbb28adb49162e012c"
 
 [[package]]
-name = "capella-reqif"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "chrono",
- "yaserde",
- "yaserde_derive",
-]
-
-[[package]]
 name = "cc"
 version = "1.0.94"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -199,10 +189,10 @@ dependencies = [
 name = "doorstop2capella"
 version = "0.1.0"
 dependencies = [
- "capella-reqif",
  "chrono",
  "clap",
  "doorstop-rs",
+ "reqif-rs",
 ]
 
 [[package]]
@@ -385,6 +375,16 @@ name = "regex-syntax"
 version = "0.8.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "adad44e29e4c806119491a7f06f03de4d1af22c3a680dd47f1e6e179439d1f56"
+
+[[package]]
+name = "reqif-rs"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "chrono",
+ "yaserde",
+ "yaserde_derive",
+]
 
 [[package]]
 name = "ryu"

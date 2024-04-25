@@ -2,7 +2,7 @@
 resolver= "2"
 
 members=[
-"capella-reqif",
+"reqif-rs",
 "doorstop2capella",
 "doorstop-rs"
 ]
