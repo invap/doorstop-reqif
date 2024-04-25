@@ -1,6 +1,3 @@
-[submodule "capella-reqif"]
-	path = capella-reqif
-	url = git@github.com:invap/capella-reqif.git
 [submodule "doorstop-rs"]
 	path = doorstop-rs
 	url = git@github.com:invap/doorstop-rs.git
