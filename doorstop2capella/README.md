@@ -1,6 +1,8 @@
 # Doorstop2Capella
 ![](https://github.com/invap/doorstop2capella/actions/workflows/rust.yml/badge.svg)
 
+![capellaimport](resources/CapellaImport.jpeg "Capella Import")
+
 Application that creates reqif files from a doorstop document tree
 
 Execute *doorstop2capella* --help for ussage
