@@ -16,6 +16,8 @@ For the time being only the root document is exported
 
 ## Related Links
 - [Doorstop](https://doorstop.readthedocs.io/en/latest/)
+- [Capella](https://mbse-capella.org/)
+- [Reqif Spec](https://www.omg.org/spec/ReqIF/1.1/PDF/)
 
 
 ## Contributing
