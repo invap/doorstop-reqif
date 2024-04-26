@@ -5,7 +5,7 @@
 
 Application that creates reqif files from a doorstop document tree
 
-Execute *doorstop2capella* --help for ussage
+Execute *doorstop2capella* --help for usage
 
 For the time being only the root document is exported
 
