@@ -2,6 +2,15 @@
 name = "doorstop-reqif"
 version = "0.1.0"
 edition = "2021"
+license = "AGPL-3.0-or-later"
+description= "Application to convert doorstop documents into reqif files"
+homepage= "https://github.com/invap/doorstop-reqif"
+repository= "https://github.com/invap/doorstop-reqif"
+readme= "README.md"
+keywords=["Doorstop","Requirements", "Convert","Reqif"]
+authors= ["Juan Ignacio Vaccarezza <jivaccarezza@invap.com.ar>"]
+documentation= "https://docs.rs/doorstop-reqif"
+
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
