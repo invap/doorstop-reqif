@@ -3,6 +3,6 @@ resolver= "2"
 
 members=[
 "reqif-rs",
-"doorstop2capella",
+"doorstop-reqif",
 "doorstop-rs"
 ]
