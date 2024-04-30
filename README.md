@@ -1,11 +1,29 @@
-# Doorstop Reqif Workspace
-![](https://github.com/invap/doorstop-reqif/actions/workflows/rust.yml/badge.svg)
+# Doorstop Reqif
+![](https://github.com/invap/doorstop2capella/actions/workflows/rust.yml/badge.svg)
 
-This cargo workspace has as main artifact doorstop-reqif.
+## Capella MBSE imported screenshot
+![capellaimport](resources/CapellaImport.jpeg "Capella Import")
 
-doorstop-rs and reqif-rs are separated repositories. Each repository publishes it's own crate to crates.io.
+Application that creates reqif files from a doorstop document tree
 
-[doorstop-reqif README](doorstop-reqif/README.md)
+Execute *doorstop-reqif* --help for usage
+
+For the time being only the root document is exported
+
+## Features
+- [X] Nesting requirements
+- [X] Select document in tree document
+- [X] Support document tree
+
+## Roadmap
+- [ ] Render html in reqif description from doorstop item's markdown.
+- [ ] Export links in requirements.
+
+## Related Links
+- [Doorstop](https://doorstop.readthedocs.io/en/latest/)
+- [Capella](https://mbse-capella.org/)
+- [Reqif Spec](https://www.omg.org/spec/ReqIF/1.1/PDF/)
+
 
 ## Contributing
 
