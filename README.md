@@ -1,14 +1,13 @@
 # Doorstop Reqif
 ![](https://github.com/invap/doorstop2capella/actions/workflows/rust.yml/badge.svg)
 
-## Capella MBSE imported screenshot
-![capellaimport](resources/CapellaImport.jpeg "Capella Import")
-
 Application that creates reqif files from a doorstop document tree
 
 Execute *doorstop-reqif* --help for usage
 
-For the time being only the root document is exported
+## Capella MBSE imported screenshot
+![capellaimport](resources/CapellaImport.jpeg "Capella Import")
+
 
 ## Features
 - [X] Nesting requirements
