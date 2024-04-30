@@ -20,6 +20,7 @@ use chrono::{DateTime, Local, SecondsFormat};
 use clap::Parser;
 use doorstop_rs::doorstop::{document::Document, document_tree::DocumentTree};
 use reqif_rs::req_if::{Object, ReqIf, SpecHierarchy, SpecObjectRequirement, Specification};
+use std::rc::Rc;
 
 fn complete(document: &Document, reqif: &mut ReqIf, specification: &mut Specification) {
     let local: DateTime<Local> = Local::now();
@@ -58,15 +59,27 @@ fn complete(document: &Document, reqif: &mut ReqIf, specification: &mut Specific
     }
 }
 
+fn create_specification(document: &Document, reqif: &mut ReqIf, local: DateTime<Local>) {
+    let document_prefix = document.config.settings.prefix.as_str();
+
+    let now = local.to_rfc3339_opts(SecondsFormat::Millis, false);
+    let mut specification = reqif.build_module_specification(
+        document_prefix.to_string(),
+        now,
+        format!("{} Specification", document_prefix),
+    );
+
+    complete(document, reqif, &mut specification);
+    reqif.add_specification(specification);
+}
+
 #[derive(Parser)]
 #[command(version, about, long_about = None)]
 struct Args {
     ///YAML doorstop document root path
     document_path: String,
-    ///ID for the specification in the reqif output file
-    spec_id: String,
-    ///Name for the specification in the reqif output file
-    spec_name: String,
+    ///Document prefix to export, if none all documents in tree are exported.
+    doc_prefix: Option<String>,
     ///Output file name
     #[clap(default_value = "out.reqif")]
     output_file: Option<String>,
@@ -76,14 +89,13 @@ fn main() {
     let cli = Args::parse();
 
     let local: DateTime<Local> = Local::now();
-    let now = local.to_rfc3339_opts(SecondsFormat::Millis, false);
     let document_tree = DocumentTree::load(&cli.document_path).unwrap();
 
     let identifier = "123456789A".to_string();
     let repository_id = "123456789A".to_string();
     let req_if_tool_id = "Doorstop".to_string();
     let source_tool_id = "Doorstop".to_string();
-    let title = format!("{}-({})", cli.spec_name, cli.spec_id);
+    let title = format!("Generated req if");
 
     let mut reqif = ReqIf::new(
         identifier,
@@ -94,14 +106,29 @@ fn main() {
         title,
     );
 
-    let mut specification = reqif.build_module_specification(cli.spec_id, now, cli.spec_name);
+    // let document = Rc::clone(&document_tree.as_ref().borrow().document);
+    // create_specification(&document, &mut reqif, local);
+    match cli.doc_prefix {
+        None => {
+            for (_, each_document_tree) in document_tree.borrow().prefix_index.borrow().iter() {
+                create_specification(&each_document_tree.borrow().document, &mut reqif, local);
+            }
+        }
+        Some(prefix) => {
+            let document = Rc::clone(
+                &document_tree
+                    .borrow()
+                    .prefix_index
+                    .borrow()
+                    .get(&prefix)
+                    .expect(format!("Prefix {} not found in document tree", prefix).as_str())
+                    .borrow()
+                    .document,
+            );
+            create_specification(&document, &mut reqif, local);
+        }
+    }
 
-    complete(
-        &document_tree.borrow().document,
-        &mut reqif,
-        &mut specification,
-    );
-
-    reqif.add_specification(specification);
     reqif.write_to(cli.output_file.as_ref().unwrap()).unwrap();
+    println!("Export complete {:?} ", cli.output_file.unwrap());
 }
