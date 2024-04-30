@@ -1,6 +1,6 @@
 [package]
 name = "doorstop-reqif"
-version = "0.2.0"
+version = "1.0.0"
 edition = "2021"
 license = "AGPL-3.0-or-later"
 description= "Application to convert doorstop documents into reqif files"
