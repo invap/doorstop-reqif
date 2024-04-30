@@ -1,6 +1,6 @@
 [package]
 name = "doorstop-reqif"
-version = "0.1.2"
+version = "1.0.0"
 edition = "2021"
 license = "AGPL-3.0-or-later"
 description= "Application to convert doorstop documents into reqif files"
@@ -16,6 +16,6 @@ documentation= "https://docs.rs/doorstop-reqif"
 
 [dependencies]
 reqif-rs = { version= "0.1.2", path = "../reqif-rs"}
-doorstop-rs = { version= "0.1.0", path = "../doorstop-rs" }
+doorstop-rs = { version= "0.2.0", path = "../doorstop-rs" }
 chrono = "0.4.37"
 clap = {version= "4.5.4", features= [ "derive" ]  }
