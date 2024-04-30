@@ -12,10 +12,12 @@ For the time being only the root document is exported
 
 ## Features
 - [X] Nesting requirements
+- [X] Select document in tree document
+- [X] Support document tree
 
 ## Roadmap
-- [ ] Select document in tree document
-- [ ] Support document tree
+- [ ] Render html in reqif description from doorstop item's markdown.
+- [ ] Export links in requirements.
 
 ## Related Links
 - [Doorstop](https://doorstop.readthedocs.io/en/latest/)
