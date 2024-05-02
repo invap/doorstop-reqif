@@ -1,5 +1,7 @@
 # Doorstop Reqif
 ![](https://github.com/invap/doorstop2capella/actions/workflows/rust.yml/badge.svg)
+[![Discord Server](https://img.shields.io/discord/1235662530110685246?label=&labelColor=6A7EC2&logo=discord&logoColor=ffffff&color=7389D8)](https://discord.gg/pE9yQK7T)
+
 
 Application that creates reqif files from a doorstop document tree
 
