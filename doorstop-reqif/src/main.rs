@@ -1,9 +1,9 @@
-// doorstop2capella: Application that converts doorstop requirement into reqif format for capella mbse.
+// doorstop-reqif: Application that converts doorstop requirement into reqif format for capella mbse.
 // Copyright (C) <2024>  INVAP S.E.
 //
-// This file is part of doorstop2capella.
+// This file is part of doorstop-reqif.
 //
-// doorstop2capella is free software: you can redistribute it and/or modify
+// doorstop-reqif is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Affero General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
 // (at your option) any later version.
